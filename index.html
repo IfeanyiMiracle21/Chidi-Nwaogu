@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chidi Nwaogu - Entrepreneur & Ecosystem Builder</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
         * {
             margin: 0;
@@ -12,265 +13,463 @@
         }
 
         html {
-            scroll-behaviour: smooth;
+            scroll-behavior: smooth;
         }
+
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
-            color: #e0e0e0;
-            background: #121212;
+            color: #e8e8e8;
+            background: #000000;
         }
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
+
         header {
-            background: rgba(18, 18, 18, 0.95);
-            backdrop-filter: blur(12px);
-            padding: 2rem 0;
+            background: rgba(0, 0, 0, 0.98);
+            backdrop-filter: blur(20px);
+            padding: 1.5rem 0;
             position: sticky;
             top: 0;
             z-index: 100;
-            box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
+
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
+
         .logo {
             font-size: 1.5rem;
             font-weight: 700;
             color: #ffffff;
-            letter-spacing: 0.5px;
+            letter-spacing: -0.5px;
         }
+
         .nav-links {
             display: flex;
-            gap: 2rem;
+            gap: 2.5rem;
             list-style: none;
         }
+
         .nav-links a {
             text-decoration: none;
-            color: #b0b0b0;
+            color: #a0a0a0;
             font-weight: 500;
+            font-size: 0.95rem;
             transition: color 0.3s ease;
+            position: relative;
         }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #ffffff;
+            transition: width 0.3s ease;
+        }
+
         .nav-links a:hover {
             color: #ffffff;
         }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
         .hero {
-            padding: 8rem 0;
+            padding: 10rem 0 8rem;
             text-align: center;
             color: #ffffff;
             min-height: 100vh;
             display: flex;
             align-items: center;
-            background: linear-gradient(135deg, rgba(30, 30, 30, 0.9) 0%, rgba(50, 50, 50, 0.9) 100%);
+            background: radial-gradient(ellipse at center, rgba(30, 30, 30, 0.5) 0%, rgba(0, 0, 0, 1) 70%);
+            position: relative;
         }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.02) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
         .hero h1 {
-            font-size: 4.5rem;
-            margin-bottom: 1.5rem;
+            font-size: 5rem;
+            margin-bottom: 1rem;
             animation: fadeInUp 1s ease;
             font-weight: 800;
-            text-shadow: 0 4px 20px rgba(0,0,0,0.4);
+            letter-spacing: -2px;
+            background: linear-gradient(135deg, #ffffff 0%, #a0a0a0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
+
         .hero .subtitle {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             margin-bottom: 2rem;
-            opacity: 0.9;
+            color: #a0a0a0;
             animation: fadeInUp 1s ease 0.2s backwards;
-            font-weight: 500;
+            font-weight: 400;
         }
+
         .hero .description {
-            font-size: 1.3rem;
-            max-width: 850px;
+            font-size: 1.2rem;
+            max-width: 750px;
             margin: 0 auto 3rem;
-            opacity: 0.85;
+            color: #909090;
             animation: fadeInUp 1s ease 0.4s backwards;
             line-height: 1.8;
         }
+
         .cta-buttons {
             display: flex;
             gap: 1rem;
             justify-content: center;
             animation: fadeInUp 1s ease 0.6s backwards;
         }
+
         .btn {
-            padding: 1rem 2rem;
-            border-radius: 50px;
+            padding: 1rem 2.5rem;
+            border-radius: 8px;
             text-decoration: none;
             font-weight: 600;
+            font-size: 0.95rem;
             transition: all 0.3s ease;
             display: inline-block;
         }
+
         .btn-primary {
             background: #ffffff;
-            color: #121212;
+            color: #000000;
         }
+
         .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(255,255,255,0.2);
-            background: #e0e0e0;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 40px rgba(255, 255, 255, 0.3);
         }
+
         .btn-secondary {
             background: transparent;
             color: #ffffff;
-            border: 2px solid #ffffff;
+            border: 1.5px solid rgba(255, 255, 255, 0.3);
         }
+
         .btn-secondary:hover {
-            background: #ffffff;
-            color: #121212;
+            border-color: #ffffff;
+            background: rgba(255, 255, 255, 0.05);
         }
+
         section {
-            background: #1a1a1a;
-            padding: 5rem 0;
+            padding: 6rem 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
         }
-        section:nth-child(even) {
-            background: #212121;
-        }
+
         .section-title {
             text-align: center;
-            font-size: 2.5rem;
+            font-size: 3rem;
             margin-bottom: 3rem;
             color: #ffffff;
+            font-weight: 700;
+            letter-spacing: -1px;
         }
+
         .about-me {
             text-align: center;
-            padding: 5rem 0;
-            background: #262626;
+            background: #000000;
         }
-        .about-me h2 {
-            font-size: 2.5rem;
-            color: #ffffff;
-            margin-bottom: 2rem;
-        }
+
         .about-me p {
-            font-size: 1.2rem;
-            color: #b0b0b0;
-            max-width: 800px;
+            font-size: 1.15rem;
+            color: #a0a0a0;
+            max-width: 850px;
             margin: 0 auto 2rem;
-            line-height: 1.8;
+            line-height: 1.9;
         }
+
         .about-me img {
-            max-width: 300px;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            max-width: 250px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(255, 255, 255, 0.1);
+            margin-bottom: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
+
         .ventures-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 2rem;
-            margin-top: 2rem;
+            margin-top: 3rem;
         }
+
         .venture-card {
-            background: #262626;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background: rgba(255, 255, 255, 0.02);
+            padding: 2.5rem;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
         }
+
+        .venture-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, rgba(255, 255, 255, 0.5), transparent);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
         .venture-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+            transform: translateY(-8px);
+            border-color: rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.04);
         }
+
+        .venture-card:hover::before {
+            opacity: 1;
+        }
+
         .venture-card h3 {
             color: #ffffff;
             margin-bottom: 1rem;
-            font-size: 1.5rem;
+            font-size: 1.6rem;
+            font-weight: 600;
         }
+
         .venture-card .year {
             display: inline-block;
-            background: #333333;
+            background: rgba(255, 255, 255, 0.1);
             color: #ffffff;
-            padding: 0.3rem 0.8rem;
+            padding: 0.4rem 1rem;
             border-radius: 20px;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             margin-bottom: 1rem;
+            font-weight: 500;
         }
+
+        .venture-card p {
+            color: #a0a0a0;
+            line-height: 1.7;
+        }
+
         .achievements-list {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 1.5rem;
-            margin-top: 2rem;
+            margin-top: 3rem;
         }
+
         .achievement-item {
-            background: #2c2c2c;
+            background: rgba(255, 255, 255, 0.02);
             color: #ffffff;
-            padding: 1.5rem;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.3s ease;
         }
+
+        .achievement-item:hover {
+            border-color: rgba(255, 255, 255, 0.15);
+            transform: translateY(-4px);
+        }
+
         .achievement-item h4 {
-            margin-bottom: 0.5rem;
-            font-size: 1.1rem;
+            margin-bottom: 0.7rem;
+            font-size: 1.15rem;
+            font-weight: 600;
         }
+
         .achievement-item p {
-            opacity: 0.9;
+            color: #909090;
             font-size: 0.95rem;
         }
+
         .recognition-tags {
             display: flex;
             flex-wrap: wrap;
             gap: 1rem;
             justify-content: center;
-            margin-top: 2rem;
+            margin-top: 3rem;
         }
+
         .tag {
-            background: #333333;
-            color: #ffffff;
+            background: rgba(255, 255, 255, 0.05);
+            color: #e0e0e0;
             padding: 0.8rem 1.5rem;
-            border-radius: 25px;
+            border-radius: 30px;
             font-size: 0.9rem;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
         }
+
+        .tag:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateY(-2px);
+        }
+
         .experience-timeline {
             max-width: 800px;
             margin: 3rem auto;
         }
+
         .timeline-item {
-            padding: 1.5rem;
-            border-left: 3px solid #ffffff;
+            padding: 2rem;
+            border-left: 2px solid rgba(255, 255, 255, 0.1);
             margin-bottom: 2rem;
             position: relative;
-            padding-left: 2rem;
+            padding-left: 2.5rem;
+            transition: border-color 0.3s ease;
         }
+
+        .timeline-item:hover {
+            border-left-color: rgba(255, 255, 255, 0.4);
+        }
+
         .timeline-item::before {
             content: '';
             position: absolute;
-            left: -8px;
-            top: 1.5rem;
-            width: 15px;
-            height: 15px;
+            left: -6px;
+            top: 2rem;
+            width: 12px;
+            height: 12px;
             border-radius: 50%;
             background: #ffffff;
+            box-shadow: 0 0 0 4px rgba(0, 0, 0, 1), 0 0 0 6px rgba(255, 255, 255, 0.2);
         }
+
         .timeline-item h3 {
             color: #ffffff;
             margin-bottom: 0.5rem;
-        }
-        .timeline-item .role {
+            font-size: 1.3rem;
             font-weight: 600;
-            color: #b0b0b0;
         }
-        footer {
-            background: #0a0a0a;
+
+        .timeline-item .role {
+            font-weight: 500;
+            color: #909090;
+            margin-bottom: 0.7rem;
+            display: block;
+        }
+
+        .timeline-item p {
+            color: #a0a0a0;
+            line-height: 1.7;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .social-links a {
+            color: #808080;
+            font-size: 1.8rem;
+            transition: all 0.3s ease;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .social-links a:hover {
             color: #ffffff;
+            border-color: rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.05);
+            transform: translateY(-3px);
+        }
+
+        footer {
+            background: #000000;
+            color: #a0a0a0;
             text-align: center;
             padding: 3rem 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
         }
+
         .book-section {
             text-align: center;
             padding: 3rem;
-            background: #262626;
-            border-radius: 15px;
-            margin-top: 2rem;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 16px;
+            margin-top: 3rem;
+            border: 1px solid rgba(255, 255, 255, 0.08);
         }
+
         .book-section h3 {
             font-size: 2rem;
             color: #ffffff;
             margin-bottom: 1rem;
+            font-weight: 600;
         }
+
+        .book-section p {
+            color: #a0a0a0;
+        }
+
+        .community-section {
+            text-align: center;
+            margin-top: 3rem;
+            padding: 2.5rem;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .community-section h3 {
+            color: #ffffff;
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+            font-weight: 600;
+        }
+
+        .community-section p {
+            font-size: 1.1rem;
+            color: #a0a0a0;
+            line-height: 1.8;
+        }
+
+        .fellowship-section h3 {
+            text-align: center;
+            margin-top: 4rem;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+            color: #ffffff;
+            font-weight: 600;
+        }
+
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -281,25 +480,56 @@
                 transform: translateY(0);
             }
         }
+
         @media (max-width: 768px) {
             .hero h1 {
-                font-size: 2.5rem;
+                font-size: 3rem;
             }
+
             .hero .subtitle {
-                font-size: 1.4rem;
+                font-size: 1.2rem;
             }
+
             .hero .description {
-                font-size: 1.1rem;
+                font-size: 1rem;
             }
+
             .nav-links {
-                flex-direction: column;
                 gap: 1rem;
+                font-size: 0.85rem;
             }
+
             .cta-buttons {
                 flex-direction: column;
+                width: 100%;
             }
-            .about-me img {
-                max-width: 100%;
+
+            .btn {
+                width: 100%;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .ventures-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .social-links {
+                gap: 1rem;
+            }
+
+            .social-links a {
+                width: 45px;
+                height: 45px;
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav-links {
+                display: none;
             }
         }
     </style>
@@ -309,6 +539,7 @@
         <nav class="container">
             <div class="logo">Chidi Nwaogu</div>
             <ul class="nav-links">
+                <li><a href="#about">About</a></li>
                 <li><a href="#ventures">Ventures</a></li>
                 <li><a href="#achievements">Achievements</a></li>
                 <li><a href="#experience">Experience</a></li>
@@ -316,8 +547,9 @@
             </ul>
         </nav>
     </header>
+
     <section class="hero">
-        <div class="container">
+        <div class="container hero-content">
             <h1>Chidi Nwaogu</h1>
             <p class="subtitle">Entrepreneur • Ecosystem Builder • Software Engineer</p>
             <p class="description">
@@ -328,16 +560,18 @@
                 <a href="#ventures" class="btn btn-secondary">Explore My Work</a>
             </div>
         </div>
-        <section id="about" class="about-me">
+    </section>
+
+    <section id="about" class="about-me">
         <div class="container">
             <h2 class="section-title">About Me</h2>
-            <img src="path/to/your-image.jpg" alt="Chidi Nwaogu">
+            <img src="https://via.placeholder.com/300x300/0a0a0a/ffffff?text=CN" alt="Chidi Nwaogu">
             <p>
                 I am Chidi Nwaogu, an award-winning entrepreneur, ecosystem builder, and software engineer based in Lagos, Nigeria. With a passion for leveraging technology to address global challenges, I have founded and scaled ventures like Savvy, Publiseer, and LAGbook, earning recognition as one of Nigeria's 100 Most Powerful Young Leaders and a key figure in African entrepreneurship. My journey includes authoring the comprehensive guide "Dear Entrepreneur" and mentoring thousands of young innovators through programs like the Tony Elumelu Foundation and YALI. I am driven by a commitment to empower the next generation and foster sustainable impact across emerging markets.
             </p>
         </div>
     </section>
-    </section>
+
     <section id="ventures">
         <div class="container">
             <h2 class="section-title">Key Ventures</h2>
@@ -357,13 +591,23 @@
                     <h3>LAGbook</h3>
                     <p>Social network that achieved over 1 million registered users within 3 years. Successfully acquired in 2013, marking one of my early entrepreneurial successes.</p>
                 </div>
+                <div class="venture-card">
+  <span class="year">2025</span>
+  <h3>Efiwe</h3>
+  <p>
+    A mobile-first, AI-powered coding platform that lets anyone learn to build real websites — from their phone.  
+    Designed to work offline, support multiple languages, and deliver real-time feedback, Efiwe is turning every smartphone into a full coding classroom.
+  </p>
+</div>
+
             </div>
             <div class="book-section">
                 <h3>📚 Author of "Dear Entrepreneur"</h3>
-                <p style="font-size: 1.1rem; color: #b0b0b0;">A comprehensive 586-page guide for aspiring and existing entrepreneurs</p>
+                <p style="font-size: 1.1rem;">A comprehensive 586-page guide for aspiring and existing entrepreneurs</p>
             </div>
         </div>
     </section>
+
     <section id="achievements">
         <div class="container">
             <h2 class="section-title">Major Achievements & Awards</h2>
@@ -385,64 +629,83 @@
                     <p>Swiss Federal Department of Foreign Affairs (2020)</p>
                 </div>
             </div>
-            <h3 style="text-align: center; margin-top: 4rem; margin-bottom: 2rem; font-size: 2rem; color: #ffffff;">Fellowships & Leadership Recognition</h3>
-            <div class="recognition-tags">
-                <span class="tag">Acumen Fellow (2020)</span>
-                <span class="tag">Alibaba eFounders Fellow (2020)</span>
-                <span class="tag">French-African Foundation Young Leader (2021)</span>
-                <span class="tag">Dalai Lama Fellow (2022)</span>
-                <span class="tag">THINC Fellow (2023)</span>
-                <span class="tag">Westerwelle Foundation Young Founder (2019)</span>
-                <span class="tag">One Young World Ambassador (2021)</span>
-                <span class="tag">Queen's Commonwealth Trust Young Leader (2022)</span>
+            <div class="fellowship-section">
+                <h3>Fellowships & Leadership Recognition</h3>
+                <div class="recognition-tags">
+                    <span class="tag">Acumen Fellow (2020)</span>
+                    <span class="tag">Alibaba eFounders Fellow (2020)</span>
+                    <span class="tag">French-African Foundation Young Leader (2021)</span>
+                    <span class="tag">Dalai Lama Fellow (2022)</span>
+                    <span class="tag">THINC Fellow (2023)</span>
+                    <span class="tag">Westerwelle Foundation Young Founder (2019)</span>
+                    <span class="tag">One Young World Ambassador (2021)</span>
+                    <span class="tag">Queen's Commonwealth Trust Young Leader (2022)</span>
+                </div>
             </div>
         </div>
     </section>
+
     <section id="experience">
         <div class="container">
             <h2 class="section-title">Professional Experience</h2>
             <div class="experience-timeline">
                 <div class="timeline-item">
                     <h3>Zarttech</h3>
-                    <p class="role">Programs and Strategy Manager</p>
+                    <span class="role">Programs and Strategy Manager</span>
                     <p>Led EdTech programs including Zarttalent and 15Wins, driving innovation in educational technology.</p>
                 </div>
                 <div class="timeline-item">
                     <h3>Startupbootcamp</h3>
-                    <p class="role">Entrepreneur in Residence - Product & Engineering</p>
+                    <span class="role">Entrepreneur in Residence - Product & Engineering</span>
                     <p>Provided strategic guidance on product development and engineering for startup cohorts.</p>
                 </div>
                 <div class="timeline-item">
                     <h3>TheNeoHub Innovation Lab</h3>
-                    <p class="role">Software Engineer</p>
+                    <span class="role">Software Engineer</span>
                     <p>Developed innovative software solutions for emerging technology challenges.</p>
                 </div>
                 <div class="timeline-item">
                     <h3>TagWorld Social Network</h3>
-                    <p class="role">Software Engineer</p>
+                    <span class="role">Software Engineer</span>
                     <p>Contributed to social networking platform development and scalability.</p>
                 </div>
             </div>
-            <div style="text-align: center; margin-top: 3rem; padding: 2rem; background: #262626; border-radius: 10px;">
-                <h3 style="color: #ffffff; margin-bottom: 1rem;">Giving Back to the Community</h3>
-                <p style="font-size: 1.1rem; color: #b0b0b0;">Active mentor and supporter of entrepreneurs through Seedstars, Tony Elumelu Foundation, Founder Institute, and the United Nations' Investment Readiness Program</p>
+            <div class="community-section">
+                <h3>Giving Back to the Community</h3>
+                <p>Active mentor and supporter of entrepreneurs through Seedstars, Tony Elumelu Foundation, Founder Institute, and the United Nations' Investment Readiness Program</p>
             </div>
         </div>
     </section>
+
     <section id="contact">
         <div class="container" style="text-align: center;">
             <h2 class="section-title">Let's Connect</h2>
-            <p style="font-size: 1.2rem; margin-bottom: 2rem; color: #b0b0b0;">Interested in collaboration, mentorship, or speaking opportunities?</p>
+            <p style="font-size: 1.2rem; margin-bottom: 2rem; color: #a0a0a0;">Interested in collaboration, mentorship, or speaking opportunities?</p>
             <div class="cta-buttons">
-                <a href="#" class="btn btn-primary">Schedule 30-min Call</a>
-                <a href="#" class="btn btn-secondary">Send WhatsApp Message</a>
+                <a href="https://calendly.com/nwaogu" class="btn btn-primary">Schedule 30-min Call</a>
+                <a href="https://api.whatsapp.com/send/?phone=2349133250311" class="btn btn-secondary">Send WhatsApp Message</a>
+            </div>
+            <div class="social-links">
+                <a href="https://linkedin.com/in/chidinwaogu" target="_blank" title="LinkedIn" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://twitter.com/chidinwaogu5" target="_blank" title="Twitter/X" aria-label="Twitter">
+                    <i class="fab fa-x-twitter"></i>
+                </a>
+                <a href="https://facebook.com/iamnwaogu" target="_blank" title="Facebook" aria-label="Facebook">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a href="https://instagram.com/iamchidinwaogu" target="_blank" title="Instagram" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
             </div>
         </div>
     </section>
+
     <footer>
         <div class="container">
-            <p>&copy; 2025 Chidi Nwaogu. All rights reserved.</p>
-            <p style="margin-top: 1rem; opacity: 0.8;">Entrepreneur | Ecosystem Builder | Author</p>
+            <p style="color: #ffffff;">&copy; 2025 Chidi Nwaogu. All rights reserved.</p>
+            <p style="margin-top: 1rem;">Entrepreneur | Ecosystem Builder | Author</p>
         </div>
     </footer>
 </body>
