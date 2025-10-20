@@ -10,212 +10,179 @@
             padding: 0;
             box-sizing: border-box;
         }
-
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #e0e0e0;
+            background: #121212;
         }
-
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
-
         header {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
+            background: rgba(18, 18, 18, 0.95);
+            backdrop-filter: blur(12px);
             padding: 2rem 0;
             position: sticky;
             top: 0;
             z-index: 100;
-            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.3);
         }
-
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-
         .logo {
             font-size: 1.5rem;
-            font-weight: bold;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            font-weight: 700;
+            color: #ffffff;
+            letter-spacing: 0.5px;
         }
-
         .nav-links {
             display: flex;
             gap: 2rem;
             list-style: none;
         }
-
         .nav-links a {
             text-decoration: none;
-            color: #333;
+            color: #b0b0b0;
             font-weight: 500;
-            transition: color 0.3s;
+            transition: color 0.3s ease;
         }
-
         .nav-links a:hover {
-            color: #667eea;
+            color: #ffffff;
         }
-
         .hero {
             padding: 8rem 0;
             text-align: center;
-            color: white;
+            color: #ffffff;
             min-height: 100vh;
             display: flex;
             align-items: center;
+            background: linear-gradient(135deg, rgba(30, 30, 30, 0.9) 0%, rgba(50, 50, 50, 0.9) 100%);
         }
-
         .hero h1 {
             font-size: 4.5rem;
             margin-bottom: 1.5rem;
             animation: fadeInUp 1s ease;
             font-weight: 800;
-            text-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            text-shadow: 0 4px 20px rgba(0,0,0,0.4);
         }
-
         .hero .subtitle {
             font-size: 1.8rem;
             margin-bottom: 2rem;
-            opacity: 1;
+            opacity: 0.9;
             animation: fadeInUp 1s ease 0.2s backwards;
             font-weight: 500;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.15);
         }
-
         .hero .description {
             font-size: 1.3rem;
             max-width: 850px;
             margin: 0 auto 3rem;
-            opacity: 0.98;
+            opacity: 0.85;
             animation: fadeInUp 1s ease 0.4s backwards;
             line-height: 1.8;
-            text-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
-
         .cta-buttons {
             display: flex;
             gap: 1rem;
             justify-content: center;
             animation: fadeInUp 1s ease 0.6s backwards;
         }
-
         .btn {
             padding: 1rem 2rem;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
-            transition: all 0.3s;
+            transition: all 0.3s ease;
             display: inline-block;
         }
-
         .btn-primary {
-            background: white;
-            color: #667eea;
+            background: #ffffff;
+            color: #121212;
         }
-
         .btn-primary:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            box-shadow: 0 10px 30px rgba(255,255,255,0.2);
+            background: #e0e0e0;
         }
-
         .btn-secondary {
-            background: rgba(255,255,255,0.2);
-            color: white;
-            border: 2px solid white;
+            background: transparent;
+            color: #ffffff;
+            border: 2px solid #ffffff;
         }
-
         .btn-secondary:hover {
-            background: white;
-            color: #667eea;
+            background: #ffffff;
+            color: #121212;
         }
-
         section {
-            background: white;
+            background: #1a1a1a;
             padding: 5rem 0;
         }
-
         section:nth-child(even) {
-            background: #f8f9fa;
+            background: #212121;
         }
-
         .section-title {
             text-align: center;
             font-size: 2.5rem;
             margin-bottom: 3rem;
-            color: #333;
+            color: #ffffff;
         }
-
         .ventures-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
             margin-top: 2rem;
         }
-
         .venture-card {
-            background: white;
+            background: #262626;
             padding: 2rem;
             border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-
         .venture-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
         }
-
         .venture-card h3 {
-            color: #667eea;
+            color: #ffffff;
             margin-bottom: 1rem;
             font-size: 1.5rem;
         }
-
         .venture-card .year {
             display: inline-block;
-            background: #667eea;
-            color: white;
+            background: #333333;
+            color: #ffffff;
             padding: 0.3rem 0.8rem;
             border-radius: 20px;
             font-size: 0.9rem;
             margin-bottom: 1rem;
         }
-
         .achievements-list {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 1.5rem;
             margin-top: 2rem;
         }
-
         .achievement-item {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
+            background: #2c2c2c;
+            color: #ffffff;
             padding: 1.5rem;
             border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
         }
-
         .achievement-item h4 {
             margin-bottom: 0.5rem;
             font-size: 1.1rem;
         }
-
         .achievement-item p {
-            opacity: 0.95;
+            opacity: 0.9;
             font-size: 0.95rem;
         }
-
         .recognition-tags {
             display: flex;
             flex-wrap: wrap;
@@ -223,29 +190,25 @@
             justify-content: center;
             margin-top: 2rem;
         }
-
         .tag {
-            background: #667eea;
-            color: white;
+            background: #333333;
+            color: #ffffff;
             padding: 0.8rem 1.5rem;
             border-radius: 25px;
             font-size: 0.9rem;
-            box-shadow: 0 3px 10px rgba(102, 126, 234, 0.3);
+            box-shadow: 0 3px 10px rgba(0,0,0,0.3);
         }
-
         .experience-timeline {
             max-width: 800px;
             margin: 3rem auto;
         }
-
         .timeline-item {
             padding: 1.5rem;
-            border-left: 3px solid #667eea;
+            border-left: 3px solid #ffffff;
             margin-bottom: 2rem;
             position: relative;
             padding-left: 2rem;
         }
-
         .timeline-item::before {
             content: '';
             position: absolute;
@@ -254,40 +217,34 @@
             width: 15px;
             height: 15px;
             border-radius: 50%;
-            background: #667eea;
+            background: #ffffff;
         }
-
         .timeline-item h3 {
-            color: #667eea;
+            color: #ffffff;
             margin-bottom: 0.5rem;
         }
-
         .timeline-item .role {
             font-weight: 600;
-            color: #555;
+            color: #b0b0b0;
         }
-
         footer {
-            background: #1a1a1a;
-            color: white;
+            background: #0a0a0a;
+            color: #ffffff;
             text-align: center;
             padding: 3rem 0;
         }
-
         .book-section {
             text-align: center;
             padding: 3rem;
-            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+            background: #262626;
             border-radius: 15px;
             margin-top: 2rem;
         }
-
         .book-section h3 {
             font-size: 2rem;
-            color: #667eea;
+            color: #ffffff;
             margin-bottom: 1rem;
         }
-
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -298,10 +255,15 @@
                 transform: translateY(0);
             }
         }
-
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: 2.5rem;
+            }
+            .hero .subtitle {
+                font-size: 1.4rem;
+            }
+            .hero .description {
+                font-size: 1.1rem;
             }
             .nav-links {
                 flex-direction: column;
@@ -325,13 +287,12 @@
             </ul>
         </nav>
     </header>
-
     <section class="hero">
         <div class="container">
             <h1>Chidi Nwaogu</h1>
             <p class="subtitle">Entrepreneur • Ecosystem Builder • Software Engineer</p>
             <p class="description">
-                Award-winning entrepreneur passionate about solving the world's most pressing problems through innovative technology and entrepreneurship. Recognized among Nigeria's 100 Most Powerful Young leaders and the continent's most outstanding business personalities.
+                Award-winning entrepreneur passionate about solving the world's most pressing problems through innovative technology and entrepreneurship. Recognized among Nigeria's 100 Most Powerful Young Leaders and the continent's most outstanding business personalities.
             </p>
             <div class="cta-buttons">
                 <a href="#contact" class="btn btn-primary">Schedule a Call</a>
@@ -339,7 +300,6 @@
             </div>
         </div>
     </section>
-
     <section id="ventures">
         <div class="container">
             <h2 class="section-title">Key Ventures</h2>
@@ -360,14 +320,12 @@
                     <p>Social network that achieved over 1 million registered users within 3 years. Successfully acquired in 2013, marking one of my early entrepreneurial successes.</p>
                 </div>
             </div>
-
             <div class="book-section">
                 <h3>📚 Author of "Dear Entrepreneur"</h3>
-                <p style="font-size: 1.1rem; color: #555;">A comprehensive 586-page guide for aspiring and existing entrepreneurs</p>
+                <p style="font-size: 1.1rem; color: #b0b0b0;">A comprehensive 586-page guide for aspiring and existing entrepreneurs</p>
             </div>
         </div>
     </section>
-
     <section id="achievements">
         <div class="container">
             <h2 class="section-title">Major Achievements & Awards</h2>
@@ -389,8 +347,7 @@
                     <p>Swiss Federal Department of Foreign Affairs (2020)</p>
                 </div>
             </div>
-
-            <h3 style="text-align: center; margin-top: 4rem; margin-bottom: 2rem; font-size: 2rem;">Fellowships & Leadership Recognition</h3>
+            <h3 style="text-align: center; margin-top: 4rem; margin-bottom: 2rem; font-size: 2rem; color: #ffffff;">Fellowships & Leadership Recognition</h3>
             <div class="recognition-tags">
                 <span class="tag">Acumen Fellow (2020)</span>
                 <span class="tag">Alibaba eFounders Fellow (2020)</span>
@@ -403,7 +360,6 @@
             </div>
         </div>
     </section>
-
     <section id="experience">
         <div class="container">
             <h2 class="section-title">Professional Experience</h2>
@@ -429,25 +385,22 @@
                     <p>Contributed to social networking platform development and scalability.</p>
                 </div>
             </div>
-
-            <div style="text-align: center; margin-top: 3rem; padding: 2rem; background: #f8f9fa; border-radius: 10px;">
-                <h3 style="color: #667eea; margin-bottom: 1rem;">Giving Back to the Community</h3>
-                <p style="font-size: 1.1rem;">Active mentor and supporter of entrepreneurs through Seedstars, Tony Elumelu Foundation, Founder Institute, and the United Nations' Investment Readiness Program</p>
+            <div style="text-align: center; margin-top: 3rem; padding: 2rem; background: #262626; border-radius: 10px;">
+                <h3 style="color: #ffffff; margin-bottom: 1rem;">Giving Back to the Community</h3>
+                <p style="font-size: 1.1rem; color: #b0b0b0;">Active mentor and supporter of entrepreneurs through Seedstars, Tony Elumelu Foundation, Founder Institute, and the United Nations' Investment Readiness Program</p>
             </div>
         </div>
     </section>
-
     <section id="contact">
         <div class="container" style="text-align: center;">
             <h2 class="section-title">Let's Connect</h2>
-            <p style="font-size: 1.2rem; margin-bottom: 2rem; color: #555;">Interested in collaboration, mentorship, or speaking opportunities?</p>
+            <p style="font-size: 1.2rem; margin-bottom: 2rem; color: #b0b0b0;">Interested in collaboration, mentorship, or speaking opportunities?</p>
             <div class="cta-buttons">
                 <a href="#" class="btn btn-primary">Schedule 30-min Call</a>
                 <a href="#" class="btn btn-secondary">Send WhatsApp Message</a>
             </div>
         </div>
     </section>
-
     <footer>
         <div class="container">
             <p>&copy; 2025 Chidi Nwaogu. All rights reserved.</p>
