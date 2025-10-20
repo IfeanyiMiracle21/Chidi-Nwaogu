@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chidi Nwaogu - Entrepreneur & Ecosystem Builder</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 2rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #667eea;
+        }
+
+        .hero {
+            padding: 8rem 0;
+            text-align: center;
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero h1 {
+            font-size: 4.5rem;
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 1s ease;
+            font-weight: 800;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.2);
+        }
+
+        .hero .subtitle {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            opacity: 1;
+            animation: fadeInUp 1s ease 0.2s backwards;
+            font-weight: 500;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.15);
+        }
+
+        .hero .description {
+            font-size: 1.3rem;
+            max-width: 850px;
+            margin: 0 auto 3rem;
+            opacity: 0.98;
+            animation: fadeInUp 1s ease 0.4s backwards;
+            line-height: 1.8;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            animation: fadeInUp 1s ease 0.6s backwards;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: white;
+            color: #667eea;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .btn-secondary {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: #667eea;
+        }
+
+        section {
+            background: white;
+            padding: 5rem 0;
+        }
+
+        section:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #333;
+        }
+
+        .ventures-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .venture-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .venture-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .venture-card h3 {
+            color: #667eea;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .venture-card .year {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .achievements-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .achievement-item {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .achievement-item h4 {
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .achievement-item p {
+            opacity: 0.95;
+            font-size: 0.95rem;
+        }
+
+        .recognition-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .tag {
+            background: #667eea;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            box-shadow: 0 3px 10px rgba(102, 126, 234, 0.3);
+        }
+
+        .experience-timeline {
+            max-width: 800px;
+            margin: 3rem auto;
+        }
+
+        .timeline-item {
+            padding: 1.5rem;
+            border-left: 3px solid #667eea;
+            margin-bottom: 2rem;
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 1.5rem;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: #667eea;
+        }
+
+        .timeline-item h3 {
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-item .role {
+            font-weight: 600;
+            color: #555;
+        }
+
+        footer {
+            background: #1a1a1a;
+            color: white;
+            text-align: center;
+            padding: 3rem 0;
+        }
+
+        .book-section {
+            text-align: center;
+            padding: 3rem;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+            border-radius: 15px;
+            margin-top: 2rem;
+        }
+
+        .book-section h3 {
+            font-size: 2rem;
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            .nav-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            .cta-buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">Chidi Nwaogu</div>
+            <ul class="nav-links">
+                <li><a href="#ventures">Ventures</a></li>
+                <li><a href="#achievements">Achievements</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Chidi Nwaogu</h1>
+            <p class="subtitle">Entrepreneur • Ecosystem Builder • Software Engineer</p>
+            <p class="description">
+                Award-winning entrepreneur passionate about solving the world's most pressing problems through innovative technology and entrepreneurship. Recognized among Nigeria's 100 Most Powerful Young leaders and the continent's most outstanding business personalities.
+            </p>
+            <div class="cta-buttons">
+                <a href="#contact" class="btn btn-primary">Schedule a Call</a>
+                <a href="#ventures" class="btn btn-secondary">Explore My Work</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="ventures">
+        <div class="container">
+            <h2 class="section-title">Key Ventures</h2>
+            <div class="ventures-grid">
+                <div class="venture-card">
+                    <span class="year">2020</span>
+                    <h3>Savvy</h3>
+                    <p>Global business incubation and acceleration company supporting aspiring and early-stage entrepreneurs. Recognized by HundrED.org (2022) as one of the 100 most impactful and scalable innovations in education worldwide.</p>
+                </div>
+                <div class="venture-card">
+                    <span class="year">2017</span>
+                    <h3>Publiseer</h3>
+                    <p>Digital distribution platform empowering independent African content creators. Recognized by Ernst & Young (2023) as one of the 100 most meaningful businesses in the world.</p>
+                </div>
+                <div class="venture-card">
+                    <span class="year">2010</span>
+                    <h3>LAGbook</h3>
+                    <p>Social network that achieved over 1 million registered users within 3 years. Successfully acquired in 2013, marking one of my early entrepreneurial successes.</p>
+                </div>
+            </div>
+
+            <div class="book-section">
+                <h3>📚 Author of "Dear Entrepreneur"</h3>
+                <p style="font-size: 1.1rem; color: #555;">A comprehensive 586-page guide for aspiring and existing entrepreneurs</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="achievements">
+        <div class="container">
+            <h2 class="section-title">Major Achievements & Awards</h2>
+            <div class="achievements-list">
+                <div class="achievement-item">
+                    <h4>Africa's Business Heroes Prize</h4>
+                    <p>$1.5M Award by Jack Ma Foundation (2021)</p>
+                </div>
+                <div class="achievement-item">
+                    <h4>Global South COVID-19 Innovation Challenge</h4>
+                    <p>$25K by ITU & UN Office for South-South Cooperation (2021)</p>
+                </div>
+                <div class="achievement-item">
+                    <h4>Catalyst Fund</h4>
+                    <p>$15K by Roddenberry Foundation (2021)</p>
+                </div>
+                <div class="achievement-item">
+                    <h4>Migration Entrepreneurship Prize</h4>
+                    <p>Swiss Federal Department of Foreign Affairs (2020)</p>
+                </div>
+            </div>
+
+            <h3 style="text-align: center; margin-top: 4rem; margin-bottom: 2rem; font-size: 2rem;">Fellowships & Leadership Recognition</h3>
+            <div class="recognition-tags">
+                <span class="tag">Acumen Fellow (2020)</span>
+                <span class="tag">Alibaba eFounders Fellow (2020)</span>
+                <span class="tag">French-African Foundation Young Leader (2021)</span>
+                <span class="tag">Dalai Lama Fellow (2022)</span>
+                <span class="tag">THINC Fellow (2023)</span>
+                <span class="tag">Westerwelle Foundation Young Founder (2019)</span>
+                <span class="tag">One Young World Ambassador (2021)</span>
+                <span class="tag">Queen's Commonwealth Trust Young Leader (2022)</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience">
+        <div class="container">
+            <h2 class="section-title">Professional Experience</h2>
+            <div class="experience-timeline">
+                <div class="timeline-item">
+                    <h3>Zarttech</h3>
+                    <p class="role">Programs and Strategy Manager</p>
+                    <p>Led EdTech programs including Zarttalent and 15Wins, driving innovation in educational technology.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>Startupbootcamp</h3>
+                    <p class="role">Entrepreneur in Residence - Product & Engineering</p>
+                    <p>Provided strategic guidance on product development and engineering for startup cohorts.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>TheNeoHub Innovation Lab</h3>
+                    <p class="role">Software Engineer</p>
+                    <p>Developed innovative software solutions for emerging technology challenges.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>TagWorld Social Network</h3>
+                    <p class="role">Software Engineer</p>
+                    <p>Contributed to social networking platform development and scalability.</p>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 3rem; padding: 2rem; background: #f8f9fa; border-radius: 10px;">
+                <h3 style="color: #667eea; margin-bottom: 1rem;">Giving Back to the Community</h3>
+                <p style="font-size: 1.1rem;">Active mentor and supporter of entrepreneurs through Seedstars, Tony Elumelu Foundation, Founder Institute, and the United Nations' Investment Readiness Program</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container" style="text-align: center;">
+            <h2 class="section-title">Let's Connect</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 2rem; color: #555;">Interested in collaboration, mentorship, or speaking opportunities?</p>
+            <div class="cta-buttons">
+                <a href="#" class="btn btn-primary">Schedule 30-min Call</a>
+                <a href="#" class="btn btn-secondary">Send WhatsApp Message</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Chidi Nwaogu. All rights reserved.</p>
+            <p style="margin-top: 1rem; opacity: 0.8;">Entrepreneur | Ecosystem Builder | Author</p>
+        </div>
+    </footer>
+</body>
+</html>
