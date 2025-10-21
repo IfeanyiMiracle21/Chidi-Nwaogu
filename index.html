@@ -19,7 +19,7 @@
         }
         .achievements h2 {
             font-size: 2rem;
-            color: #00ff99;
+            color: #ffffff;
             text-align: center;
             margin-bottom: 2rem;
         }
@@ -34,19 +34,19 @@
             background: #111;
             border-radius: 10px;
             padding: 20px;
-            box-shadow: 0 3px 10px rgba(0, 255, 153, 0.05);
+            box-shadow: 0 3px 10px rgba(255, 255, 255, 0.05);
             transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.4s ease;
             cursor: pointer;
         }
         .achievement-item:hover {
             transform: translateY(-5px) scale(1.02);
             background: #0f0f0f;
-            box-shadow: 0 0 15px rgba(0, 255, 153, 0.25);
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.15);
         }
         .icon-box {
             background: #0d0d0d;
-            border: 1px solid #00ff99;
-            color: #00ff99;
+            border: 1px solid #ffffff;
+            color: #ffffff;
             width: 50px;
             height: 50px;
             display: flex;
@@ -60,7 +60,7 @@
         }
         .achievement-item:hover .icon-box {
             transform: rotate(10deg) scale(1.1);
-            box-shadow: 0 0 10px #00ff99;
+            box-shadow: 0 0 10px #ffffff;
         }
         .achievement-text h4 {
             margin: 0 0 6px;
@@ -123,6 +123,9 @@
             font-size: 0.95rem;
             transition: color 0.3s ease;
             position: relative;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
         .nav-links a::after {
             content: '';
@@ -149,6 +152,15 @@
             cursor: pointer;
             padding: 0.5rem;
             z-index: 101;
+        }
+        .hamburger .fa-times {
+            display: none;
+        }
+        .hamburger.active .fa-bars {
+            display: none;
+        }
+        .hamburger.active .fa-times {
+            display: inline;
         }
         .hero {
             padding: 4rem 0 8rem;
@@ -185,7 +197,7 @@
         }
         .scroll-down {
             text-align: center;
-            color: #00ff99;
+            color: #ffffff;
             font-size: 1.5rem;
             margin-top: 40px;
             animation: bounce 1.5s infinite;
@@ -234,7 +246,9 @@
             font-weight: 600;
             font-size: 0.95rem;
             transition: all 0.3s ease;
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
         }
         .btn-primary {
             background: #ffffff;
@@ -242,16 +256,18 @@
         }
         .btn-primary:hover {
             transform: translateY(-2px);
+            background: #e0e0e0;
             box-shadow: 0 10px 40px rgba(255, 255, 255, 0.3);
         }
         .btn-secondary {
             background: transparent;
             color: #ffffff;
-            border: 1.5px solid rgba(255, 255, 255, 0.3);
+            border: 1.5px solid #ffffff;
         }
         .btn-secondary:hover {
-            border-color: #ffffff;
-            background: rgba(255, 255, 255, 0.05);
+            border-color: #e0e0e0;
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
         }
         section {
             padding: 6rem 0;
@@ -264,6 +280,10 @@
             color: #ffffff;
             font-weight: 700;
             letter-spacing: -1px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
         }
         .about-me {
             text-align: center;
@@ -288,7 +308,7 @@
         .about-me img:hover {
             filter: grayscale(0%) brightness(1.1);
             transform: scale(1.03);
-            box-shadow: 0 0 25px rgba(0, 194, 255, 0.4);
+            box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
         }
         .ventures-grid {
             display: grid;
@@ -312,7 +332,7 @@
             left: 0;
             right: 0;
             height: 3px;
-            background: linear-gradient(90deg, rgba(255, 255, 255, 0.5), transparent);
+            background: linear-gradient(90deg, #ffffff, transparent);
             opacity: 0;
             transition: opacity 0.4s ease;
         }
@@ -389,6 +409,7 @@
         }
         .tag:hover {
             background: rgba(255, 255, 255, 0.08);
+            border-color: #ffffff;
             transform: translateY(-2px);
         }
         .experience-timeline {
@@ -404,7 +425,7 @@
             transition: border-color 0.3s ease;
         }
         .timeline-item:hover {
-            border-left-color: rgba(255, 255, 255, 0.4);
+            border-left-color: #ffffff;
         }
         .timeline-item::before {
             content: '';
@@ -454,7 +475,7 @@
         }
         .social-links a:hover {
             color: #ffffff;
-            border-color: rgba(255, 255, 255, 0.3);
+            border-color: #ffffff;
             background: rgba(255, 255, 255, 0.05);
             transform: translateY(-3px);
         }
@@ -478,6 +499,10 @@
             color: #ffffff;
             margin-bottom: 1rem;
             font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
         }
         .book-section p {
             color: #a0a0a0;
@@ -495,6 +520,10 @@
             margin-bottom: 1rem;
             font-size: 1.8rem;
             font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
         }
         .community-section p {
             font-size: 1.1rem;
@@ -508,6 +537,10 @@
             font-size: 2rem;
             color: #ffffff;
             font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
         }
         @keyframes fadeInUp {
             from {
@@ -589,10 +622,11 @@
             .nav-links a {
                 font-size: 1rem;
                 padding: 0.5rem;
-                display: block;
+                display: flex;
+                justify-content: center;
             }
             .nav-links a::after {
-                display: none; /* Remove underline effect on mobile for cleaner look */
+                display: none;
             }
         }
     </style>
@@ -603,13 +637,14 @@
             <div class="logo">Chidi Nwaogu</div>
             <button class="hamburger" aria-label="Toggle menu">
                 <i class="fas fa-bars"></i>
+                <i class="fas fa-times"></i>
             </button>
             <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#ventures">Ventures</a></li>
-                <li><a href="#achievements">Achievements</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#about"> About</a></li>
+                <li><a href="#ventures"> Ventures</a></li>
+                <li><a href="#achievements"> Achievements</a></li>
+                <li><a href="#experience"> Experience</a></li>
+                <li><a href="#contact"> Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -624,8 +659,8 @@
                 Award-winning entrepreneur passionate about solving the world's most pressing problems through innovative technology and entrepreneurship. Recognized among Nigeria's 100 Most Powerful Young Leaders and the continent's most outstanding business personalities.
             </p>
             <div class="cta-buttons" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600">
-                <a href="#contact" class="btn btn-primary">Schedule a Call</a>
-                <a href="#ventures" class="btn btn-secondary">Explore My Work</a>
+                <a href="#contact" class="btn btn-primary"><i class="fas fa-calendar" aria-hidden="true"></i> Schedule a Call</a>
+                <a href="#ventures" class="btn btn-secondary"><i class="fas fa-rocket" aria-hidden="true"></i> Explore My Work</a>
             </div>
             <div class="scroll-down"><i class="fa-solid fa-angles-down" aria-hidden="true"></i></div>
         </div>
@@ -641,7 +676,7 @@
     </section>
     <section id="ventures">
         <div class="container">
-            <h2 class="section-title" data-aos="fade-down" data-aos-duration="1000"><i class="fa-solid fa-rocket" aria-hidden="true"></i> Key Ventures</h2>
+            <h2 class="section-title" data-aos="fade-down" data-aos-duration="1000"><i class="fas fa-rocket" aria-hidden="true"></i> Key Ventures</h2>
             <div class="ventures-grid">
                 <div class="venture-card" data-aos="fade-up" data-aos-duration="1000">
                     <span class="year">2020</span>
@@ -677,14 +712,14 @@
                 </div>
             </div>
             <div class="book-section" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="800">
-                <h3>📚 Author of "Dear Entrepreneur"</h3>
+                <h3><i class="fas fa-book" aria-hidden="true"></i> Author of "Dear Entrepreneur"</h3>
                 <p style="font-size: 1.1rem;">A comprehensive 586-page guide for aspiring and existing entrepreneurs</p>
             </div>
         </div>
     </section>
     <section id="achievements">
         <div class="container">
-            <h2 class="section-title" data-aos="fade-down" data-aos-duration="1000"><i class="fa-solid fa-trophy" aria-hidden="true"></i> Major Achievements & Awards</h2>
+            <h2 class="section-title" data-aos="fade-down" data-aos-duration="1000"><i class="fas fa-trophy" aria-hidden="true"></i> Major Achievements & Awards</h2>
             <div class="achievements-list">
                 <div class="achievement-item" data-aos="fade-up" data-aos-duration="1000">
                     <div class="icon-box"><i class="fa-solid fa-medal" aria-hidden="true"></i></div>
@@ -716,7 +751,7 @@
                 </div>
             </div>
             <div class="fellowship-section" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="800">
-                <h3>Fellowships & Leadership Recognition</h3>
+                <h3><i class="fas fa-star" aria-hidden="true"></i> Fellowships & Leadership Recognition</h3>
                 <div class="recognition-tags">
                     <span class="tag" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="900">Acumen Fellow (2020)</span>
                     <span class="tag" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="1000">Alibaba eFounders Fellow (2020)</span>
@@ -732,7 +767,7 @@
     </section>
     <section id="experience">
         <div class="container">
-            <h2 class="section-title" data-aos="fade-down" data-aos-duration="1000">Professional Experience</h2>
+            <h2 class="section-title" data-aos="fade-down" data-aos-duration="1000"><i class="fas fa-briefcase" aria-hidden="true"></i> Professional Experience</h2>
             <div class="experience-timeline">
                 <div class="timeline-item" data-aos="fade-right" data-aos-duration="1000">
                     <h3>Zarttech</h3>
@@ -756,19 +791,19 @@
                 </div>
             </div>
             <div class="community-section" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="800">
-                <h3>Giving Back to the Community</h3>
+                <h3><i class="fas fa-hands-helping" aria-hidden="true"></i> Giving Back to the Community</h3>
                 <p>Active mentor and supporter of entrepreneurs through Seedstars, Tony Elumelu Foundation, Founder Institute, and the United Nations' Investment Readiness Program</p>
             </div>
         </div>
     </section>
     <section id="contact">
         <div class="container" style="text-align: center;">
-            <h2 class="section-title" data-aos="fade-down" data-aos-duration="1000">Let's Connect</h2>
+            <h2 class="section-title" data-aos="fade-down" data-aos-duration="1000"><i class="fas fa-envelope" aria-hidden="true"></i> Let's Connect</h2>
             <p style="font-size: 1.2rem; margin-bottom: 2rem; color: #a0a0a0;" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">Interested in collaboration, mentorship, or speaking opportunities?</p>
             <div class="cta-buttons" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
-                <a href="https://calendly.com/nwaogu" class="btn btn-primary">Schedule 30-min Call</a>
+                <a href="https://calendly.com/nwaogu" class="btn btn-primary"><i class="fas fa-calendar" aria-hidden="true"></i> Schedule 30-min Call</a>
                 <a href="https://wa.me/2349133250311" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">
-                    Send WhatsApp Message
+                    <i class="fab fa-whatsapp" aria-hidden="true"></i> Send WhatsApp Message
                 </a>
             </div>
             <div class="social-links" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600">
@@ -802,8 +837,29 @@
         });
 
         // Hamburger menu toggle
-        document.querySelector('.hamburger').addEventListener('click', () => {
-            document.querySelector('.nav-links').classList.toggle('active');
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', (e) => {
+            e.stopPropagation(); // Prevent click from bubbling to document
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!navLinks.contains(e.target) && !hamburger.contains(e.target) && navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+                hamburger.classList.remove('active');
+            }
+        });
+
+        // Close menu when a nav link is clicked
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                hamburger.classList.remove('active');
+            });
         });
     </script>
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
