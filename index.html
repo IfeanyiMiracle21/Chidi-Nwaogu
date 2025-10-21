@@ -13,7 +13,7 @@
 
 
     <style>
-        * {
+       * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -253,75 +253,33 @@
             color: #a0a0a0;
             line-height: 1.7;
         }
-           .achievements {
-  color: #ddd;
-  padding: 60px 20px;
-  max-width: 900px;
-  margin: 0 auto;
-  text-align: left;
-}
-
-.achievements h2 {
-  font-size: 2rem;
-  color: #00ff99;
-  text-align: center;
-  margin-bottom: 2rem;
-}
-
-.achievements-list {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.achievement-item {
-  display: flex;
-  align-items: center;
-  background: #111;
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0 3px 10px rgba(0, 255, 153, 0.05);
-  transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.4s ease;
-  cursor: pointer;
-}
-
-.achievement-item:hover {
-  transform: translateY(-5px) scale(1.02);
-  background: #0f0f0f;
-  box-shadow: 0 0 15px rgba(0, 255, 153, 0.25);
-}
-
-.icon-box {
-  background: #0d0d0d;
-  border: 1px solid #00ff99;
-  color: #00ff99;
-  width: 50px;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  margin-right: 15px;
-  font-size: 1.3rem;
-  flex-shrink: 0;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
-.achievement-item:hover .icon-box {
-  transform: rotate(10deg) scale(1.1);
-  box-shadow: 0 0 10px #00ff99;
-}
-
-.achievement-text h4 {
-  margin: 0 0 6px;
-  font-size: 1.2rem;
-  color: #fff;
-}
-
-.achievement-text p {
-  margin: 0;
-  font-size: 0.95rem;
-  color: #aaa;
-}
+        .achievements-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+        .achievement-item {
+            background: rgba(255, 255, 255, 0.02);
+            color: #ffffff;
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.3s ease;
+        }
+        .achievement-item:hover {
+            border-color: rgba(255, 255, 255, 0.15);
+            transform: translateY(-4px);
+        }
+        .achievement-item h4 {
+            margin-bottom: 0.7rem;
+            font-size: 1.15rem;
+            font-weight: 600;
+        }
+        .achievement-item p {
+            color: #909090;
+            font-size: 0.95rem;
+        }
         .recognition-tags {
             display: flex;
             flex-wrap: wrap;
@@ -513,7 +471,6 @@
   flex-shrink: 0;
   transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
-
 .achievement-item:hover .icon-box {
   transform: rotate(10deg) scale(1.1);
   box-shadow: 0 0 10px #00ff99;
@@ -524,6 +481,7 @@
   font-size: 1.2rem;
   color: #fff;
 }
+
 .achievement-text p {
   margin: 0;
   font-size: 0.95rem;
@@ -641,7 +599,7 @@
                 <div class="venture-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
                     <span class="year">2010</span>
                     <h3><i class="fa-solid fa-users"></i> LAGbook</h3>
-                    <p> A Social network that achieved over 1 million registered users within 3 years. Successfully acquired in 2013, marking one of my early entrepreneurial successes.</p>
+                    <p>Social network that achieved over 1 million registered users within 3 years. Successfully acquired in 2013, marking one of my early entrepreneurial successes.</p>
                 </div>
                 <div class="venture-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600">
                     <span class="year">2025</span>
