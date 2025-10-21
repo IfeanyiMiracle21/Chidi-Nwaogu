@@ -240,15 +240,20 @@
             justify-content: center;
         }
         .btn {
-            padding: 1rem 2.5rem;
+            padding: 0.75rem 1.5rem; /* Reduced padding */
             border-radius: 8px;
             text-decoration: none;
             font-weight: 600;
-            font-size: 0.95rem;
+            font-size: 0.9rem; /* Reduced font size */
             transition: all 0.3s ease;
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
+            max-width: 200px; /* Added max-width to limit button length */
+            text-align: center;
+            white-space: nowrap; /* Prevent text wrapping */
+            overflow: hidden;
+            text-overflow: ellipsis; /* Handle overflow with ellipsis if needed */
         }
         .btn-primary {
             background: #ffffff;
@@ -578,6 +583,10 @@
             }
             .btn {
                 width: 100%;
+                max-width: 250px;
+                margin: 0 auto; 
+                padding: 0.75rem 1rem; 
+                font-size: 0.85rem; 
             }
             .section-title {
                 font-size: 2rem;
@@ -640,11 +649,11 @@
                 <i class="fas fa-times"></i>
             </button>
             <ul class="nav-links">
-                <li><a href="#about"> About</a></li>
-                <li><a href="#ventures"> Ventures</a></li>
-                <li><a href="#achievements"> Achievements</a></li>
-                <li><a href="#experience"> Experience</a></li>
-                <li><a href="#contact"> Contact</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#ventures">Ventures</a></li>
+                <li><a href="#achievements">Achievements</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -667,7 +676,7 @@
     </section>
     <section id="about" class="about-me">
         <div class="container">
-            <h2 class="section-title" data-aos="fade-down" data-aos-duration="1000">About Me</h2>
+            <h2 class="section-title" data-aos="fade-down" data-aos-duration="1000"><i class="fas fa-user" aria-hidden="true"></i> About Me</h2>
             <img src="Aboutme.jpeg" alt="Chidi Nwaogu" loading="lazy" data-aos="zoom-in" data-aos-duration="1000">
             <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
                 I am Chidi Nwaogu, an award-winning entrepreneur, ecosystem builder, and software engineer based in Lagos, Nigeria. With a passion for leveraging technology to address global challenges, I have founded and scaled ventures like Savvy, Publiseer, and LAGbook, earning recognition as one of Nigeria's 100 Most Powerful Young Leaders and a key figure in African entrepreneurship. My journey includes authoring the comprehensive guide "Dear Entrepreneur" and mentoring thousands of young innovators through programs like the Tony Elumelu Foundation and YALI. I am driven by a commitment to empower the next generation and foster sustainable impact across emerging markets.
@@ -801,7 +810,7 @@
             <h2 class="section-title" data-aos="fade-down" data-aos-duration="1000"><i class="fas fa-envelope" aria-hidden="true"></i> Let's Connect</h2>
             <p style="font-size: 1.2rem; margin-bottom: 2rem; color: #a0a0a0;" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">Interested in collaboration, mentorship, or speaking opportunities?</p>
             <div class="cta-buttons" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
-                <a href="https://calendly.com/nwaogu" class="btn btn-primary"><i class="fas fa-calendar" aria-hidden="true"></i> Schedule 30-min Call</a>
+                <a href="https://calendly.com/nwaogu" class="btn btn-primary"><i class="fas fa-calendar" aria-hidden="true"></i> Schedule a Call</a>
                 <a href="https://wa.me/2349133250311" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">
                     <i class="fab fa-whatsapp" aria-hidden="true"></i> Send WhatsApp Message
                 </a>
